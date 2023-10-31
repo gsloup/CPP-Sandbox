@@ -30,3 +30,7 @@
 *.exe
 *.out
 *.app
+
+# Not sure on these, but adding them
+*.dSYM
+*.plist
