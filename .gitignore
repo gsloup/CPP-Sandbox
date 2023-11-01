@@ -34,3 +34,4 @@
 # Not sure on these, but adding them
 *.dSYM
 *.plist
+.vscode/settings.json

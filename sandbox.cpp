@@ -449,11 +449,32 @@
     Ternary Operator-- replaces if/else statements
             - condition ? doIfTrue : doIfFalse
  */
+
+using namespace std;  
+
 int main(){
     
+    int grade = 56;
+    string message;
+    bool isEven; 
+
+    grade >= 60 ? message = "Pass" : message = "Fail"; // same as JS
+
+    cout << message << endl;
+
+    grade % 2 == 0 ? isEven = true : isEven = false;
+
+    cout << isEven << endl;  // Returns 1 or 0 for True or False
 
     return 0;
 }
+
+// --------------------------------------------------------------
+/* 
+    Logical Operators-- 
+ */
+
+
 // --------------------------------------------------------------
 
 
