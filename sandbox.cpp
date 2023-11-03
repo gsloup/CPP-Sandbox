@@ -473,25 +473,49 @@
 /* 
     Logical Operators-- And (&&) Or (||) Not(!)
  */
+
+// using namespace std;
+
+// int main() {
+//     bool answer1 = false;
+//     bool answer2 = true;
+
+//     if (answer1 && answer2) {
+//         cout << "Both answers are true" << endl;
+//     }
+//     if (answer1 || answer2) {
+//         cout << "At least one answer is true" << endl;
+//     }
+//     if (!answer1) {
+//         cout << "This answer is false" << endl;
+//     }
+//     return 0;
+// }
+
+// --------------------------------------------------------------
+/* 
+    Useful String Functions
+ */
+
 using namespace std;
 
 int main() {
-    bool answer1 = false;
-    bool answer2 = true;
+    string name;
 
-    if (answer1 && answer2) {
-        cout << "Both answers are true" << endl;
+    cout << "What is your name?" << endl;
+    getline(cin, name);
+
+    if(name.length() > 12) {
+        cout << "Your name cannot be more than 12 char long." << endl;
+    } 
+    else {
+        cout << "Welcome " << name << endl;
     }
-    if (answer1 || answer2) {
-        cout << "At least one answer is true" << endl;
-    }
-    if (!answer1) {
-        cout << "This answer is false" << endl;
-    }
+
+
+
     return 0;
 }
-
-
 // --------------------------------------------------------------
 
 
