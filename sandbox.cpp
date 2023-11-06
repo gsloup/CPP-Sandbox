@@ -495,27 +495,57 @@
 // --------------------------------------------------------------
 /* 
     Useful String Functions
+        -- Visit this website for a more comprehensive list:
+            https://cplusplus.com/reference/string/string/ 
  */
 
-using namespace std;
+// using namespace std;
 
-int main() {
-    string name;
+// int main() {
+//     string name;
 
-    cout << "What is your name?" << endl;
-    getline(cin, name);
+//     cout << "What is your name? ";
+//     getline(cin, name);
 
-    if(name.length() > 12) {
-        cout << "Your name cannot be more than 12 char long." << endl;
-    } 
-    else {
-        cout << "Welcome " << name << endl;
-    }
+//     if(name.empty()) { // Checks if value is empty
+//         cout << "You didn't enter anything.  Please try again." << endl; 
+//     } 
+//     else if(name.length() > 12) { // calcs length of string
+//         cout << "Your name cannot be more than 12 char long." << endl;
+//     } 
+//     else {
+//         cout << "Welcome " << name << endl;
+//     }
+
+//     // name.clear(); // clears value, now empty
+
+//     // string emailGen = name.append("@gmail.com"); // appends value to end of existing string
+
+//     // cout << "Here is your new email: " << emailGen << endl;
+
+//     // cout << "The second letter in your name is " << name.at(1) << endl;  // grabs specific value at index 
+
+//     // name.insert(0, "$"); // inserts a value in a given string-> (location, value)
+
+//     // cout << "Your Money name is " << name << endl; 
+
+//     int spacesInName = name.find(' '); // returns index of a value
+
+//     cout << "Space location the provided name? " << spacesInName << endl; 
+
+//     name.erase(0, 3); // erases the first 3 char of the given string
+//                       //    -- upto but not including the last index (0, 1, 2)
+
+//     return 0;
+// }
+
+// --------------------------------------------------------------
+/* 
+    While Loops
+ */
 
 
 
-    return 0;
-}
 // --------------------------------------------------------------
 
 
