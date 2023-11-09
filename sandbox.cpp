@@ -543,6 +543,23 @@
 /* 
     While Loops
  */
+using namespace std;
+
+int main() {
+    int counter = 0;
+    while(counter < 10) {
+        cout << "Looped through " << counter << " times" << endl;
+        counter++;
+    }
+    return 0;
+
+    string name;
+    while(name.empty()){
+        cout << "Enter your name: ";
+        getline(cin, name);
+    }
+    cout << "Hey there " << name << endl;
+}
 
 
 
