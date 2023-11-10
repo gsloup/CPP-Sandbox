@@ -543,25 +543,43 @@
 /* 
     While Loops
  */
+// using namespace std;
+
+// int main() {
+//     int counter = 0;
+//     while(counter < 10) {
+//         cout << "Looped through " << counter << " times" << endl;
+//         counter++;
+//     }
+//     return 0;
+
+//     string name;
+//     while(name.empty()){
+//         cout << "Enter your name: ";
+//         getline(cin, name);
+//     }
+//     cout << "Hey there " << name << endl;
+// }
+
+// --------------------------------------------------------------
+/* 
+    Do While Loops - do some block of code first, then repeat again 
+                     if condition is true
+ */
+
 using namespace std;
+int main(){
+    int number;
 
-int main() {
-    int counter = 0;
-    while(counter < 10) {
-        cout << "Looped through " << counter << " times" << endl;
-        counter++;
-    }
+    do{
+        cout << "Enter a positive number";
+        cin >> number;
+    }while(number < 0);
+
+    cout << number << "is a positve number" << endl;
+
     return 0;
-
-    string name;
-    while(name.empty()){
-        cout << "Enter your name: ";
-        getline(cin, name);
-    }
-    cout << "Hey there " << name << endl;
 }
-
-
 
 // --------------------------------------------------------------
 
