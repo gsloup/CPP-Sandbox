@@ -567,19 +567,39 @@
                      if condition is true
  */
 
+// using namespace std;
+// int main(){
+//     int number;
+
+//     do{
+//         cout << "Enter a positive number";
+//         cin >> number;
+//     }while(number < 0);
+
+//     cout << number << "is a positve number" << endl;
+
+//     return 0;
+// }
+
+// --------------------------------------------------------------
+/* 
+    For Loops 
+ */
+
 using namespace std;
+
 int main(){
-    int number;
-
-    do{
-        cout << "Enter a positive number";
-        cin >> number;
-    }while(number < 0);
-
-    cout << number << "is a positve number" << endl;
-
+    for (int i=0; i<=3; i++){
+        cout << "Hello x" << i << endl;
+    }   
     return 0;
+
 }
+
+// --------------------------------------------------------------
+/* 
+    For Loops 
+ */
 
 // --------------------------------------------------------------
 
