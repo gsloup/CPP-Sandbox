@@ -496,7 +496,7 @@
 /* 
     Useful String Functions
         -- Visit this website for a more comprehensive list:
-            https://cplusplus.com/reference/string/string/ 
+            // https://cplusplus.com/reference/string/string/ 
  */
 
 // using namespace std;
@@ -586,21 +586,52 @@
     For Loops 
  */
 
+// using namespace std;
+
+// int main(){
+//     for (int i=0; i<=3; i++){
+//         cout << "Hello x" << i << endl;
+//     }   
+//     return 0;
+
+// }
+
+// --------------------------------------------------------------
+/* 
+    Break and Continue:
+        - Break: break out of a loop
+        - Continue: skip current iteration
+ */
+
 using namespace std;
 
 int main(){
-    for (int i=0; i<=3; i++){
-        cout << "Hello x" << i << endl;
-    }   
-    return 0;
 
+    for (int i = 1; i<=20; i++) {
+        if (i == 13) {
+            cout << "unlucky number" << endl;
+            continue; // will skip this iteration and keep going
+        }
+        if (i >= 19) {
+            break; // will stop the loop
+        }
+        cout << i << "\n";
+    }
+
+    return 0;
 }
 
 // --------------------------------------------------------------
 /* 
-    For Loops 
+    Nested Loops
  */
 
+using namespace std;
+
+int main(){
+
+    return 0;
+}
 // --------------------------------------------------------------
 
 
