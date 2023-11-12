@@ -626,25 +626,43 @@
     Nested Loops
  */
 
-using namespace std;
+// using namespace std;
 
-int iterations = 0;
+// int iterations = 0;
 
-int main(){
-    for(int i=0; i<5; i++){
-        for(int j=0; j<5; j++){
-            cout << "i: " << i << " & j: " << j << endl;
-            iterations++;
-        }
-    }
-    cout << "Total loops: " << iterations << endl;
-    return 0;
-}
+// int main(){
+//     for(int i=0; i<5; i++){
+//         for(int j=0; j<5; j++){
+//             cout << "i: " << i << " & j: " << j << endl;
+//             iterations++;
+//         }
+//     }
+//     cout << "Total loops: " << iterations << endl;
+//     return 0;
+// }
 
 // --------------------------------------------------------------
 /* 
-    Random Number Generator
+    Random Number Generator-
+        It's psuedo-random (not truly random)
  */
+
+#include <ctime> // helps with working with random numbers
+
+using namespace std;
+
+int main(){
+    srand(time(NULL)); // use current calendar time as a seed
+
+    // int num = rand(); // 1 in over 32k chance, need to alter with % to get num chances
+    int num = rand() % 6; // 1 in 6 chance
+
+    num++; // makes it start at 1
+
+    cout << num;
+
+    return 0;
+}
 
 // --------------------------------------------------------------
 
