@@ -603,23 +603,23 @@
         - Continue: skip current iteration
  */
 
-using namespace std;
+// using namespace std;
 
-int main(){
+// int main(){
 
-    for (int i = 1; i<=20; i++) {
-        if (i == 13) {
-            cout << "unlucky number" << endl;
-            continue; // will skip this iteration and keep going
-        }
-        if (i >= 19) {
-            break; // will stop the loop
-        }
-        cout << i << "\n";
-    }
+//     for (int i = 1; i<=20; i++) {
+//         if (i == 13) {
+//             cout << "unlucky number" << endl;
+//             continue; // will skip this iteration and keep going
+//         }
+//         if (i >= 19) {
+//             break; // will stop the loop
+//         }
+//         cout << i << "\n";
+//     }
 
-    return 0;
-}
+//     return 0;
+// }
 
 // --------------------------------------------------------------
 /* 
@@ -628,10 +628,24 @@ int main(){
 
 using namespace std;
 
-int main(){
+int iterations = 0;
 
+int main(){
+    for(int i=0; i<5; i++){
+        for(int j=0; j<5; j++){
+            cout << "i: " << i << " & j: " << j << endl;
+            iterations++;
+        }
+    }
+    cout << "Total loops: " << iterations << endl;
     return 0;
 }
+
+// --------------------------------------------------------------
+/* 
+    Random Number Generator
+ */
+
 // --------------------------------------------------------------
 
 
