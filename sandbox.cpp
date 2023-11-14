@@ -647,23 +647,53 @@
         It's psuedo-random (not truly random)
  */
 
-#include <ctime> // helps with working with random numbers
+// #include <ctime> // helps with working with random numbers
+
+// using namespace std;
+
+// int main(){
+//     srand(time(NULL)); // use current calendar time as a seed
+
+//     // int num = rand(); // 1 in over 32k chance, need to alter with % to get num chances
+//     int num = rand() % 6; // 1 in 6 chance
+
+//     num++; // makes it start at 1
+
+//     cout << num;
+
+//     return 0;
+// }
+
+// --------------------------------------------------------------
+/* 
+    Random Event Generator-
+        It's psuedo-random (not truly random)
+ */
+
+#include <ctime>
 
 using namespace std;
 
 int main(){
-    srand(time(NULL)); // use current calendar time as a seed
+    srand(time(0)); // using current time as a seed to gen random nums
 
-    // int num = rand(); // 1 in over 32k chance, need to alter with % to get num chances
-    int num = rand() % 6; // 1 in 6 chance
+    int randNum = rand() % 5 + 1; // num range 1-5
 
-    num++; // makes it start at 1
-
-    cout << num;
+    switch(randNum) {
+        case 1: cout << "You win $500!\n";
+            break;
+        case 2: cout << "You win an Amazon gift card!\n";
+            break;
+        case 3: cout << "You win new dinnerware!\n";
+            break;
+        case 4: cout << "You win a free coffee!\n";
+            break;
+        case 5: cout << "You win a sticker!\n";
+            break;
+    }
 
     return 0;
 }
-
 // --------------------------------------------------------------
 
 
