@@ -670,35 +670,54 @@
         It's psuedo-random (not truly random)
  */
 
-#include <ctime>
+// #include <ctime>
+
+// using namespace std;
+
+// int main(){
+//     srand(time(0)); // using current time as a seed to gen random nums
+
+//     int randNum = rand() % 5 + 1; // num range 1-5
+
+//     switch(randNum) {
+//         case 1: cout << "You win $500!\n";
+//             break;
+//         case 2: cout << "You win an Amazon gift card!\n";
+//             break;
+//         case 3: cout << "You win new dinnerware!\n";
+//             break;
+//         case 4: cout << "You win a free coffee!\n";
+//             break;
+//         case 5: cout << "You win a sticker!\n";
+//             break;
+//     }
+
+//     return 0;
+// }
+// --------------------------------------------------------------
+/* 
+    Functions
+ */
 
 using namespace std;
 
+// If you want to have the func below, need to initialize it above main func
+void happyBirthday(string name, int age);
+
 int main(){
-    srand(time(0)); // using current time as a seed to gen random nums
+    string name = "Gary";
+    int age = 30;
 
-    int randNum = rand() % 5 + 1; // num range 1-5
-
-    switch(randNum) {
-        case 1: cout << "You win $500!\n";
-            break;
-        case 2: cout << "You win an Amazon gift card!\n";
-            break;
-        case 3: cout << "You win new dinnerware!\n";
-            break;
-        case 4: cout << "You win a free coffee!\n";
-            break;
-        case 5: cout << "You win a sticker!\n";
-            break;
-    }
+    happyBirthday(name, age);
 
     return 0;
 }
+
+void happyBirthday(string bdayBoy, int bdayAge){
+    cout << "happy " << bdayAge << "th bday " << bdayBoy << endl;
+}
+
 // --------------------------------------------------------------
-
-
-
-
 
 
 
