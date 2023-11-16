@@ -699,22 +699,50 @@
     Functions
  */
 
-using namespace std;
+// using namespace std;
 
-// If you want to have the func below, need to initialize it above main func
-void happyBirthday(string name, int age);
+// // If you want to have the func below, need to initialize it above main func
+// void happyBirthday(string name, int age);
+
+// int main(){
+//     string name = "Gary";
+//     int age = 30;
+
+//     happyBirthday(name, age);
+
+//     return 0;
+// }
+
+// void happyBirthday(string bdayBoy, int bdayAge){
+//     cout << "happy " << bdayAge << "th bday " << bdayBoy << endl;
+// }
+
+// --------------------------------------------------------------
+/* 
+    Return- Returns a value back to the spot where you called the 
+                encompassing function
+ */
+
+using namespace std;
+double square(double length); // the first 'double' is the return type
+double cube(double length);
 
 int main(){
-    string name = "Gary";
-    int age = 30;
+    double length = 5.0;
+    double area = square(length);
+    double volume = cube(length);
 
-    happyBirthday(name, age);
+    cout << "The length: " << length << "cm. The area: " << area << "cm^2. The volume: " << volume << "cm^3.\n";
 
     return 0;
 }
 
-void happyBirthday(string bdayBoy, int bdayAge){
-    cout << "happy " << bdayAge << "th bday " << bdayBoy << endl;
+double square(double length){
+    return length * length;
+}
+
+double cube(double length){
+    return length * length * length;
 }
 
 // --------------------------------------------------------------
