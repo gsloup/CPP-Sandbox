@@ -699,22 +699,47 @@
     Functions
  */
 
+// using namespace std;
+
+// // If you want to have the func below, need to initialize it above main func
+// void happyBirthday(string name, int age);
+
+// int main(){
+//     string name = "Gary";
+//     int age = 30;
+
+//     happyBirthday(name, age);
+
+//     return 0;
+// }
+
+// void happyBirthday(string bdayBoy, int bdayAge){
+//     cout << "happy " << bdayAge << "th bday " << bdayBoy << endl;
+// }
+
+// --------------------------------------------------------------
+/* 
+    Overloaded Functions
+ */
+
 using namespace std;
 
-// If you want to have the func below, need to initialize it above main func
-void happyBirthday(string name, int age);
+void makePizza();                   // each of these are different functions
+void makePizza(string topping);     // they just have dif signatures
 
 int main(){
-    string name = "Gary";
-    int age = 30;
 
-    happyBirthday(name, age);
-
+    makePizza();
+    makePizza("pepperoni");
+    
     return 0;
 }
 
-void happyBirthday(string bdayBoy, int bdayAge){
-    cout << "happy " << bdayAge << "th bday " << bdayBoy << endl;
+void makePizza(){
+    cout << "Here is your pizza!" << endl;
+}
+void makePizza(string topping){
+    cout << "Here is your " << topping << " pizza!" << endl;
 }
 
 // --------------------------------------------------------------
