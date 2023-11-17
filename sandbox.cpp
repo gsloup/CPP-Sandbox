@@ -723,27 +723,25 @@
                 encompassing function
  */
 
-using namespace std;
-double square(double length); // the first 'double' is the return type
-double cube(double length);
+// using namespace std;
+// double square(double length); // the first 'double' is the return type
+// double cube(double length);
 
-int main(){
-    double length = 5.0;
-    double area = square(length);
-    double volume = cube(length);
+// int main(){
+//     double length = 5.0;
+//     double area = square(length);
+//     double volume = cube(length);
 
-    cout << "The length: " << length << "cm. The area: " << area << "cm^2. The volume: " << volume << "cm^3.\n";
-}
+//     cout << "The length: " << length << "cm. The area: " << area << "cm^2. The volume: " << volume << "cm^3.\n";
+// }
 
-double square(double length){
-    return length * length;
-}
+// double square(double length){
+//     return length * length;
+// }
 
-double cube(double length){
-    return length * length * length;
-}
-
-
+// double cube(double length){
+//     return length * length * length;
+// }
 
 // --------------------------------------------------------------
 /* 
@@ -767,6 +765,7 @@ void makePizza(){
 }
 void makePizza(string topping){
     cout << "Here is your " << topping << " pizza!" << endl;
+}
 
 // --------------------------------------------------------------
 
