@@ -748,24 +748,51 @@
     Overloaded Functions
  */
 
+// using namespace std;
+
+// void makePizza();                   // each of these are different functions
+// void makePizza(string topping);     // they just have dif signatures
+
+// int main(){
+//     makePizza();
+//     makePizza("pepperoni");
+    
+//     return 0;
+// }
+
+// void makePizza(){
+//     cout << "Here is your pizza!" << endl;
+// }
+// void makePizza(string topping){
+//     cout << "Here is your " << topping << " pizza!" << endl;
+// }
+
+
+// --------------------------------------------------------------
+/* 
+    Variable Scope--
+        * Local variables = declared inside a function or block {}
+        * Global variables = declared outside of all functions
+ */
+
 using namespace std;
 
-void makePizza();                   // each of these are different functions
-void makePizza(string topping);     // they just have dif signatures
+int myNum = 3; // globally defined.  Accessible everywhere in this file
+
+void printNum();
 
 int main(){
-    makePizza();
-    makePizza("pepperoni");
-    
+    int myNum = 1; // stuck inside this function
+
+    cout << "myNum inside main func: " << myNum << endl;
+    printNum();    
+
     return 0;
 }
-
-void makePizza(){
-    cout << "Here is your pizza!" << endl;
-}
-void makePizza(string topping){
-    cout << "Here is your " << topping << " pizza!" << endl;
-}
+void printNum(){
+    // cout << "myNum inside main func: " << myNum << endl;
+    cout << "myNum inside main func: " << ::myNum << endl; // can use a scope resolution operator to call the global variable
+}    
 
 // --------------------------------------------------------------
 
