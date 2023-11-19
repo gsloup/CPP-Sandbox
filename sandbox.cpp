@@ -797,22 +797,49 @@
 // --------------------------------------------------------------
 /* 
     Arrays
- */
+*/
+
+// using namespace std;
+
+// int main(){
+//     string car[] = {"corvette", "Mustang", "Camry"};
+
+//     car[2] = "Lambo";
+
+//     cout << car[0]; // corvette
+//     cout << car[1]; // mustang
+//     cout << car[2]; // lambo 
+
+//     return 0;
+// }
+
+// --------------------------------------------------------------
+/* 
+    sizeof() = operator that determines the size (in bytes) of a:
+        - variable, data type, class, objects, etc.
+*/
 
 using namespace std;
 
 int main(){
-    string car[] = {"corvette", "Mustang", "Camry"};
+    double gpa = 2.5;
+    string name = "garrett";
+    char grade = 'F';
+    bool student = true;
+    char grades[] = {'A', 'B', 'C', 'D', 'F'};
+    string students[] = {"Spongebob", "Patrick", "Squidward"};
 
-    car[2] = "Lambo";
+    cout << sizeof(gpa) << " bytes\n"; // the gpa variable is 8 bytes (same with 'double')
+    cout << sizeof(name) << " bytes\n"; // string is 32 bytes since it holds an address where text is located
+                                        //      * changing the string shouldn't affect size
+    cout << sizeof(grade) << " byte\n"; // 1 byte
+    cout << sizeof(student) << " byte\n"; // 1 byte
+    cout << sizeof(grades) << " bytes\n"; // 5 bytes-- 5 chars in the array
 
-    cout << car[0]; // corvette
-    cout << car[1]; // mustang
-    cout << car[2]; // lambo 
-
+    cout << sizeof(grades)/sizeof(char) << " elements in the 'grades' array\n"; // can divide by an individual item (like grades[0]) or just the data type (char)
+    cout << sizeof(students)/sizeof(string) << " elements in the 'students' array\n"; // get the length of the array like above
     return 0;
 }
-
 // --------------------------------------------------------------
 
 
