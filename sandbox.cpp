@@ -775,28 +775,45 @@
         * Global variables = declared outside of all functions
  */
 
+// using namespace std;
+
+// int myNum = 3; // globally defined.  Accessible everywhere in this file
+
+// void printNum();
+
+// int main(){
+//     int myNum = 1; // stuck inside this function
+
+//     cout << "myNum inside main func: " << myNum << endl;
+//     printNum();    
+
+//     return 0;
+// }
+// void printNum(){
+//     // cout << "myNum inside main func: " << myNum << endl;
+//     cout << "myNum inside main func: " << ::myNum << endl; // can use a scope resolution operator to call the global variable
+// }    
+
+// --------------------------------------------------------------
+/* 
+    Arrays
+ */
+
 using namespace std;
 
-int myNum = 3; // globally defined.  Accessible everywhere in this file
-
-void printNum();
-
 int main(){
-    int myNum = 1; // stuck inside this function
+    string car[] = {"corvette", "Mustang", "Camry"};
 
-    cout << "myNum inside main func: " << myNum << endl;
-    printNum();    
+    car[2] = "Lambo";
+
+    cout << car[0]; // corvette
+    cout << car[1]; // mustang
+    cout << car[2]; // lambo 
 
     return 0;
 }
-void printNum(){
-    // cout << "myNum inside main func: " << myNum << endl;
-    cout << "myNum inside main func: " << ::myNum << endl; // can use a scope resolution operator to call the global variable
-}    
 
 // --------------------------------------------------------------
-
-
 
 
 
