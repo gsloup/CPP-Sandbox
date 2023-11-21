@@ -819,31 +819,48 @@
         - variable, data type, class, objects, etc.
 */
 
+// using namespace std;
+
+// int main(){
+//     double gpa = 2.5;
+//     string name = "garrett";
+//     char grade = 'F';
+//     bool student = true;
+//     char grades[] = {'A', 'B', 'C', 'D', 'F'};
+//     string students[] = {"Spongebob", "Patrick", "Squidward"};
+
+//     cout << sizeof(gpa) << " bytes\n"; // the gpa variable is 8 bytes (same with 'double')
+//     cout << sizeof(name) << " bytes\n"; // string is 32 bytes since it holds an address where text is located
+//                                         //      * changing the string shouldn't affect size
+//     cout << sizeof(grade) << " byte\n"; // 1 byte
+//     cout << sizeof(student) << " byte\n"; // 1 byte
+//     cout << sizeof(grades) << " bytes\n"; // 5 bytes-- 5 chars in the array
+
+//     cout << sizeof(grades)/sizeof(char) << " elements in the 'grades' array\n"; // can divide by an individual item (like grades[0]) or just the data type (char)
+//     cout << sizeof(students)/sizeof(string) << " elements in the 'students' array\n"; // get the length of the array like above
+//     return 0;
+// }
+
+// --------------------------------------------------------------
+/* 
+    Iterate over an Array
+*/
+
 using namespace std;
 
 int main(){
-    double gpa = 2.5;
-    string name = "garrett";
-    char grade = 'F';
-    bool student = true;
-    char grades[] = {'A', 'B', 'C', 'D', 'F'};
-    string students[] = {"Spongebob", "Patrick", "Squidward"};
+    string names[] = {"Gabby", "Garrett", "Georgia"};
 
-    cout << sizeof(gpa) << " bytes\n"; // the gpa variable is 8 bytes (same with 'double')
-    cout << sizeof(name) << " bytes\n"; // string is 32 bytes since it holds an address where text is located
-                                        //      * changing the string shouldn't affect size
-    cout << sizeof(grade) << " byte\n"; // 1 byte
-    cout << sizeof(student) << " byte\n"; // 1 byte
-    cout << sizeof(grades) << " bytes\n"; // 5 bytes-- 5 chars in the array
+    int arrayLength = sizeof(names)/sizeof(string);
 
-    cout << sizeof(grades)/sizeof(char) << " elements in the 'grades' array\n"; // can divide by an individual item (like grades[0]) or just the data type (char)
-    cout << sizeof(students)/sizeof(string) << " elements in the 'students' array\n"; // get the length of the array like above
+    for (int i=0; i<arrayLength; i++) {
+        cout << "Hello " << names[i] << endl;
+    }
+
     return 0;
 }
+
 // --------------------------------------------------------------
-
-
-
 
 
 
