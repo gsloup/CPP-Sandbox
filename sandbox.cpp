@@ -846,21 +846,36 @@
     Iterate over an Array
 */
 
+// using namespace std;
+
+// int main(){
+//     string names[] = {"Gabby", "Garrett", "Georgia"};
+
+//     int arrayLength = sizeof(names)/sizeof(string);
+
+//     for (int i=0; i<arrayLength; i++) {
+//         cout << "Hello " << names[i] << endl;
+//     }
+
+//     return 0;
+// }
+
+// --------------------------------------------------------------
+/* 
+    Foreach loop - loop that eases the traversal over an 
+                    iterable data set
+        * Less flexibility, but also simpler syntax than ^^ for loop
+*/
+
 using namespace std;
 
 int main(){
-    string names[] = {"Gabby", "Garrett", "Georgia"};
+    string names[] = {"Ed", "Edd", "Eddy"};
 
-    int arrayLength = sizeof(names)/sizeof(string);
-
-    for (int i=0; i<arrayLength; i++) {
-        cout << "Hello " << names[i] << endl;
+    for (string name : names){
+        cout << "Hi there " << name << endl;
     }
-
     return 0;
 }
 
 // --------------------------------------------------------------
-
-
-
