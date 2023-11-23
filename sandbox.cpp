@@ -867,15 +867,47 @@
         * Less flexibility, but also simpler syntax than ^^ for loop
 */
 
+// using namespace std;
+
+// int main(){
+//     string names[] = {"Ed", "Edd", "Eddy"};
+
+//     for (string name : names){
+//         cout << "Hi there " << name << endl;
+//     }
+//     return 0;
+// }
+
+// --------------------------------------------------------------
+/* 
+    Pass array to a function
+*/
+
 using namespace std;
 
-int main(){
-    string names[] = {"Ed", "Edd", "Eddy"};
+double getTotal(double prices[], int size);
 
-    for (string name : names){
-        cout << "Hi there " << name << endl;
-    }
+int main(){
+    double prices[] = {49.99, 15.05, 75, 9.99};
+    int size = sizeof(prices)/sizeof(prices[0]);
+    double total = getTotal(prices, size);
+
+    cout << "$" << total;
+
     return 0;
+}
+
+// when a func receives an array, it decays into a pointer, so you can't do the normal
+//  'sizeof' func without issues
+double getTotal(double prices[], int size){
+    double total = 0;
+
+    for(int i = 0; i<size; i++){
+        total += prices[i];
+    }
+
+    return total;
+
 }
 
 // --------------------------------------------------------------
