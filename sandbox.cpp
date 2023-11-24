@@ -883,30 +883,70 @@
     Pass array to a function
 */
 
-using namespace std;
+// using namespace std;
 
-double getTotal(double prices[], int size);
+// double getTotal(double prices[], int size);
+
+// int main(){
+//     double prices[] = {49.99, 15.05, 75, 9.99};
+//     int size = sizeof(prices)/sizeof(prices[0]);
+//     double total = getTotal(prices, size);
+
+//     cout << "$" << total;
+
+//     return 0;
+// }
+
+// // when a func receives an array, it decays into a pointer, so you can't do the normal
+// //  'sizeof' func without issues
+// double getTotal(double prices[], int size){
+//     double total = 0;
+
+//     for(int i = 0; i<size; i++){
+//         total += prices[i];
+//     }
+
+//     return total;
+
+// }
+
+// --------------------------------------------------------------
+/* 
+    Search array for an element
+*/
+
+using namespace std;
+int searchArray(int array[], int size, int element);
 
 int main(){
-    double prices[] = {49.99, 15.05, 75, 9.99};
-    int size = sizeof(prices)/sizeof(prices[0]);
-    double total = getTotal(prices, size);
+    int numbers[] = {1,2,3,4,5,6,7,8,9,10};
+    int size = sizeof(numbers)/sizeof(numbers[0]);
+    int index;
+    int myNum;
 
-    cout << "$" << total;
+    cout << "Enter element to search for: \n";
+    cin >> myNum;
 
-    return 0;
-}
+    index = searchArray(numbers, size, myNum);
 
-// when a func receives an array, it decays into a pointer, so you can't do the normal
-//  'sizeof' func without issues
-double getTotal(double prices[], int size){
-    double total = 0;
-
-    for(int i = 0; i<size; i++){
-        total += prices[i];
+    if(index != -1){
+        cout << myNum << " is at index " << index;
+    }
+    else {
+        cout << myNum << " is not in the array\n";
     }
 
-    return total;
+
+    return 0;
+    
+}
+int searchArray(int array[], int size, int element){
+    for(int i=0; i<size; i++){
+        if(array[i] == element){
+            return i;
+        }
+    }
+    return -1;
 
 }
 
