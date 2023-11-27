@@ -915,39 +915,76 @@
     Search array for an element
 */
 
+// using namespace std;
+// int searchArray(int array[], int size, int element);
+
+// int main(){
+//     int numbers[] = {1,2,3,4,5,6,7,8,9,10};
+//     int size = sizeof(numbers)/sizeof(numbers[0]);
+//     int index;
+//     int myNum;
+
+//     cout << "Enter element to search for: \n";
+//     cin >> myNum;
+
+//     index = searchArray(numbers, size, myNum);
+
+//     if(index != -1){
+//         cout << myNum << " is at index " << index;
+//     }
+//     else {
+//         cout << myNum << " is not in the array\n";
+//     }
+
+
+//     return 0;
+    
+// }
+// int searchArray(int array[], int size, int element){
+//     for(int i=0; i<size; i++){
+//         if(array[i] == element){
+//             return i;
+//         }
+//     }
+//     return -1;
+
+// }
+
+// --------------------------------------------------------------
+/* 
+    Sort an Array
+*/
+
 using namespace std;
-int searchArray(int array[], int size, int element);
+
+void sort(int array[], int size);
 
 int main(){
-    int numbers[] = {1,2,3,4,5,6,7,8,9,10};
-    int size = sizeof(numbers)/sizeof(numbers[0]);
-    int index;
-    int myNum;
 
-    cout << "Enter element to search for: \n";
-    cin >> myNum;
+    int array[] = {2, 1, 10, 8, 6, 5, 7, 3, 4, 9};
+    int size = sizeof(array)/sizeof(array[0]);
+    
+    sort(array, size);
 
-    index = searchArray(numbers, size, myNum);
-
-    if(index != -1){
-        cout << myNum << " is at index " << index;
+    for(int element : array){
+        cout << element << " ";
     }
-    else {
-        cout << myNum << " is not in the array\n";
-    }
-
 
     return 0;
-    
 }
-int searchArray(int array[], int size, int element){
-    for(int i=0; i<size; i++){
-        if(array[i] == element){
-            return i;
-        }
-    }
-    return -1;
 
+void sort(int array[], int size){
+
+    int temp;
+    for(int i = 0; i < size-1; i++) // don't need to compare the last item in the array to anything
+        for(int j = 0; j < size-i-1; j++){ // don't need to sort any elements that are already sorted
+            if (array[j] > array[j + 1]){ // change this arrow to the other direction to make it decending sort
+                temp = array[j];
+                array[j] = array[j + 1];
+                array[j + 1] = temp;
+
+            }
+        }
 }
 
 // --------------------------------------------------------------
