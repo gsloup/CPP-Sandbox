@@ -955,36 +955,73 @@
     Sort an Array
 */
 
+// using namespace std;
+
+// void sort(int array[], int size);
+
+// int main(){
+
+//     int array[] = {2, 1, 10, 8, 6, 5, 7, 3, 4, 9};
+//     int size = sizeof(array)/sizeof(array[0]);
+    
+//     sort(array, size);
+
+//     for(int element : array){
+//         cout << element << " ";
+//     }
+
+//     return 0;
+// }
+
+// void sort(int array[], int size){
+
+//     int temp;
+//     for(int i = 0; i < size-1; i++) // don't need to compare the last item in the array to anything
+//         for(int j = 0; j < size-i-1; j++){ // don't need to sort any elements that are already sorted
+//             if (array[j] > array[j + 1]){ // change this arrow to the other direction to make it decending sort
+//                 temp = array[j];
+//                 array[j] = array[j + 1];
+//                 array[j + 1] = temp;
+
+//             }
+//         }
+// }
+
+// --------------------------------------------------------------
+/* 
+    fill() - Fills a range of elements with a specific value
+            fill(begin, end, value)
+*/
+
 using namespace std;
 
-void sort(int array[], int size);
-
 int main(){
+    // A) First basic way
+    // string foods[10] = {"pizza", "pizza", "pizza", "pizza", "pizza", "pizza", "pizza", "pizza", "pizza", "pizza"};
+    // string foods[100];
+    // fill(foods, foods + 100, "pizza");
 
-    int array[] = {2, 1, 10, 8, 6, 5, 7, 3, 4, 9};
-    int size = sizeof(array)/sizeof(array[0]);
-    
-    sort(array, size);
+    // B) can also do below
+    // const int SIZE = 100;
+    // string foods[SIZE];
+    // fill(foods, foods + SIZE, "pizza");
 
-    for(int element : array){
-        cout << element << " ";
+    // C) To break it up into halfs
+    // const int SIZE = 100;
+    // string foods[SIZE];
+    // fill(foods, foods + (SIZE/2), "hamburger");
+    // fill(foods + (SIZE/2), foods + SIZE, "pizza");
+
+    // D) To Break into 3rds
+    const int SIZE = 100;
+    string foods[SIZE];
+    fill(foods, foods + (SIZE/3), "hamburger");
+    fill(foods + (SIZE/3), foods + (SIZE/3)* 2, "pizza");
+    fill(foods + (SIZE/3)* 2, foods + SIZE, "hotdog"); // actually gives you 34, one extra
+
+    for (string food : foods){
+        cout << food << endl;
     }
-
     return 0;
 }
-
-void sort(int array[], int size){
-
-    int temp;
-    for(int i = 0; i < size-1; i++) // don't need to compare the last item in the array to anything
-        for(int j = 0; j < size-i-1; j++){ // don't need to sort any elements that are already sorted
-            if (array[j] > array[j + 1]){ // change this arrow to the other direction to make it decending sort
-                temp = array[j];
-                array[j] = array[j + 1];
-                array[j + 1] = temp;
-
-            }
-        }
-}
-
 // --------------------------------------------------------------
