@@ -9,7 +9,20 @@
 
     <script type="text/jsx">
       const app = document.getElementById("app");
-      ReactDOM.render(<h1>This is an H1 tag</h1>, app);
+
+      function Header(){
+        return <h1>This is an H1 tag</h1>
+      }
+
+      function HomePage(){
+        return (
+          <div>
+            <Header />
+          </div>
+        )
+      }
+
+      ReactDOM.render(<HomePage />, app);
     </script>
   </body>
 </html>
