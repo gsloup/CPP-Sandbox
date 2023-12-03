@@ -29,7 +29,8 @@ Determine which games would have been possible if the bag had been loaded with o
 const fs = require("fs");
 let input = fs
   .readFileSync("html-sandbox/advent-of-code-2023/day2/input.txt")
-  .toString();
+  .toString()
+  .split("\n");
 
 // EXAMPLE DATA
 // let lines = [
@@ -40,8 +41,6 @@ let input = fs
 //   "Game 5: 6 red, 1 blue, 3 green; 2 blue, 1 red, 2 green",
 // ];
 
-let gameNumSum = 0; // sum of all the valid game numbers
-
 // These are the actual values of the cubes in the elf's bag
 const bagValues = {
   red: 12,
@@ -49,19 +48,25 @@ const bagValues = {
   blue: 14,
 };
 
-for (let line of input.split("\n")) {
-  // for (let line of lines) { // UNCOMMENT OUT LNE FOR EXAMPLE DATA
-  [gameNum, highestValues] = setHighestGameVals(line); // [ 1, { blue: 6, red: 4, green: 2 } ]
-  const isInvalidGame = Object.keys(highestValues).some((color) => {
-    return highestValues[color] > bagValues[color];
-  });
-  if (isInvalidGame) {
-    console.log("Invalid Game: ", gameNum);
-    continue;
+function sumValidGameNumber() {
+  let gameNumSum = 0; // sum of all the valid game numbers
+  for (let line of input) {
+    // for (let line of lines) { // UNCOMMENT OUT LINE FOR EXAMPLE DATA
+    [gameNum, highestValues] = setHighestGameVals(line); // [ 1, { blue: 6, red: 4, green: 2 } ]
+    const isInvalidGame = Object.keys(highestValues).some((color) => {
+      return highestValues[color] > bagValues[color];
+    });
+    if (isInvalidGame) {
+      //   console.log("Invalid Game: ", gameNum);
+      continue;
+    }
+    gameNumSum += gameNum;
   }
-  gameNumSum += gameNum;
+  return gameNumSum;
 }
-console.log("Total Sum of Valid Game Numbers: ", gameNumSum);
+// TO RUN CHALLENGE 1, UNCOMMENT OUT THE 2 LINES BELOW:
+// const sum = sumValidGameNumber();
+// console.log("Challenge 1 Sum: ", sum);
 
 /*
 Takes each "line" or game's string data and processes it.
@@ -91,3 +96,5 @@ function setHighestGameVals(line) {
   }
   return [gameNum, highestValues];
 }
+
+module.exports = { setHighestGameVals };
