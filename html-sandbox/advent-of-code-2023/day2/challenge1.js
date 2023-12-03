@@ -48,33 +48,13 @@ const bagValues = {
   blue: 14,
 };
 
-function sumValidGameNumber() {
-  let gameNumSum = 0; // sum of all the valid game numbers
-  for (let line of input) {
-    // for (let line of lines) { // UNCOMMENT OUT LINE FOR EXAMPLE DATA
-    [gameNum, highestValues] = setHighestGameVals(line); // [ 1, { blue: 6, red: 4, green: 2 } ]
-    const isInvalidGame = Object.keys(highestValues).some((color) => {
-      return highestValues[color] > bagValues[color];
-    });
-    if (isInvalidGame) {
-      //   console.log("Invalid Game: ", gameNum);
-      continue;
-    }
-    gameNumSum += gameNum;
-  }
-  return gameNumSum;
-}
-// TO RUN CHALLENGE 1, UNCOMMENT OUT THE 2 LINES BELOW:
-// const sum = sumValidGameNumber();
-// console.log("Challenge 1 Sum: ", sum);
-
 /*
 Takes each "line" or game's string data and processes it.
 
 Will return an array with index 0 being the game number
-    and index 1 being an object with all the colors and highest values
+and index 1 being an object with all the colors and highest values
 
-    ex) [ 1, { blue: '6', red: 4, green: 2 } ]
+ex) [ 1, { blue: '6', red: 4, green: 2 } ]
 */
 function setHighestGameVals(line) {
   const [game, ...gameData] = line.split(/[:,;]/);
@@ -96,5 +76,25 @@ function setHighestGameVals(line) {
   }
   return [gameNum, highestValues];
 }
+
+function sumValidGameNumber() {
+  let gameNumSum = 0; // sum of all the valid game numbers
+  for (let line of input) {
+    // for (let line of lines) { // UNCOMMENT OUT LINE FOR EXAMPLE DATA
+    [gameNum, highestValues] = setHighestGameVals(line); // [ 1, { blue: 6, red: 4, green: 2 } ]
+    const isInvalidGame = Object.keys(highestValues).some((color) => {
+      return highestValues[color] > bagValues[color];
+    });
+    if (isInvalidGame) {
+      //   console.log("Invalid Game: ", gameNum);
+      continue;
+    }
+    gameNumSum += gameNum;
+  }
+  return gameNumSum;
+}
+// TO RUN CHALLENGE 1, UNCOMMENT OUT THE 2 LINES BELOW:
+// const sum = sumValidGameNumber();
+// console.log("Challenge 1 Sum: ", sum);
 
 module.exports = { setHighestGameVals };
