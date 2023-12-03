@@ -31,7 +31,14 @@ Determine which games would have been possible if the bag had been loaded with o
 //   .readFileSync("html-sandbox/advent-of-code-2023/day2/input.txt")
 //   .toString();
 
-let line = "Game 1: 3 blue, 4 red; 1 red, 2 green, 6 blue; 2 green";
+let lines = [
+  "Game 1: 3 blue, 4 red; 1 red, 2 green, 6 blue; 2 green",
+  "Game 2: 1 blue, 2 green; 3 green, 4 blue, 1 red; 1 green, 1 blue",
+  "Game 3: 8 green, 6 blue, 20 red; 5 blue, 4 red, 13 green; 5 green, 1 red",
+  "Game 4: 1 green, 3 red, 6 blue; 3 green, 6 red; 3 green, 15 blue, 14 red",
+  "Game 5: 6 red, 1 blue, 3 green; 2 blue, 1 red, 2 green",
+];
+
 let gameNumSum = 0; // sum of all the valid game numbers
 
 // These are the actual values of the cubes in the elf's bag
@@ -43,16 +50,18 @@ const bagValues = {
 
 // Check each game
 // for (let line of input.split("/n")) {
-[gameNum, highestValues] = setHighestGameVals(line); // [ 1, { blue: 6, red: 4, green: 2 } ]
-const isInvalidGame = Object.keys(highestValues).some((color) => {
-  console.log("Color:", color);
-  console.log("   Game value:", highestValues[color]);
-  console.log("   Actual value", bagValues[color]);
-  console.log(" ");
-  return highestValues[color] > bagValues[color];
-});
-
-console.log(isInvalidGame, "isInvalidGame");
+for (let line of lines) {
+  [gameNum, highestValues] = setHighestGameVals(line); // [ 1, { blue: 6, red: 4, green: 2 } ]
+  const isInvalidGame = Object.keys(highestValues).some((color) => {
+    return highestValues[color] > bagValues[color];
+  });
+  if (isInvalidGame) {
+    console.log("Invalid Game: ", gameNum);
+    continue;
+  }
+  gameNumSum += gameNum;
+}
+console.log("Total Sum of Valid Game Numbers: ", gameNumSum);
 
 /*
 Takes each "line" or game's string data and processes it.
@@ -79,6 +88,5 @@ function setHighestGameVals(line) {
       highestValues[color] = parseInt(number); // blue : 1
     }
   }
-  console.log([gameNum, highestValues]);
   return [gameNum, highestValues];
 }
