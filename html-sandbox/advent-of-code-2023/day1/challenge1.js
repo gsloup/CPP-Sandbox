@@ -31,13 +31,12 @@ function calibrationValue(code) {
       rightmost = code[i];
     }
   }
-  // console.log("leftmost", leftmost);
-  // console.log("rightmost", rightmost);
   return parseInt(leftmost + rightmost); // these are still string values, so can just add them -> '1' + '2' = '12'
 }
 
-// iterate through the list of codes, adding up the sums
 for (code in codes) {
   sum += calibrationValue(codes[code]);
 }
-console.log(sum); // returns 142 from example code, 55386 (correct) for the actual answer
+console.log("Challenge 1 answer: ", sum); // returns 142 from example code, 55386 (correct) for the actual answer
+
+module.exports = { calibrationValue }; // using this for challenge2.js

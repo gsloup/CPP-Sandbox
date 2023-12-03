@@ -15,50 +15,38 @@ In this example, the calibration values are 29, 83, 13, 24, 42, 14, and 76. Addi
 
 What is the sum of all of the calibration values?
 */
-const codes = [
-  "two1nine",
-  "eightwothree",
-  "abcone2threexyz",
-  "xtwone3four",
-  "4nineeightseven2",
-  "zoneight234",
-  "7pqrstsixteen",
-];
-// const codes = require("./codes");
+// const codes = [
+//   "two1nine",
+//   "eightwothree",
+//   "abcone2threexyz",
+//   "xtwone3four",
+//   "4nineeightseven2",
+//   "zoneight234",
+//   "7pqrstsixteen",
+// ];
+const { calibrationValue } = require("./challenge1");
+
+const codes = require("./codes");
 
 let sum = 0;
-const stringNums = {
-  one: 1,
-  two: 2,
-  three: 3,
-  four: 4,
-  five: 5,
-  six: 6,
-  seven: 7,
-  eight: 8,
-  nine: 9,
+
+const numberMappings = {
+  one: "one1one",
+  two: "two2two",
+  three: "three3three",
+  four: "four4four",
+  five: "five5five",
+  six: "six6six",
+  seven: "seven7seven",
+  eight: "eight8eight",
+  nine: "nine9nine",
 };
 
-if ("one" in stringNums) {
-  console.log("HELL YEAH");
-}
-
-function calibrationValue(code) {
-  let leftmost;
-  let rightmost;
-  for (let i = 0; i < code.length; i++) {
-    if (parseInt(code[i])) {
-      leftmost = leftmost ? leftmost : code[i];
-      rightmost = code[i];
-    }
+for (let code of codes) {
+  for (let num of Object.keys(numberMappings)) {
+    code = code.replaceAll(num, numberMappings[num]);
   }
-
-  return parseInt(leftmost + rightmost); // these are still string values, so can just add them -> '1' + '2' = '12'
+  sum += calibrationValue(code);
 }
 
-for (code in codes) {
-  sum += calibrationValue(codes[code]);
-}
-console.log(sum);
-
-// ----------------------------------------------------------------------------------------
+console.log("Challenge 2 answer: ", sum); // 54824 (correct) from the codes.js list
