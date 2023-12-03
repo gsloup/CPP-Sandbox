@@ -26,18 +26,19 @@ In the example above, games 1, 2, and 5 would have been possible if the bag had 
 Determine which games would have been possible if the bag had been loaded with only 12 red cubes, 13 green cubes, and 14 blue cubes. What is the sum of the IDs of those games?
 */
 
-// const fs = require("fs");
-// let input = fs
-//   .readFileSync("html-sandbox/advent-of-code-2023/day2/input.txt")
-//   .toString();
+const fs = require("fs");
+let input = fs
+  .readFileSync("html-sandbox/advent-of-code-2023/day2/input.txt")
+  .toString();
 
-let lines = [
-  "Game 1: 3 blue, 4 red; 1 red, 2 green, 6 blue; 2 green",
-  "Game 2: 1 blue, 2 green; 3 green, 4 blue, 1 red; 1 green, 1 blue",
-  "Game 3: 8 green, 6 blue, 20 red; 5 blue, 4 red, 13 green; 5 green, 1 red",
-  "Game 4: 1 green, 3 red, 6 blue; 3 green, 6 red; 3 green, 15 blue, 14 red",
-  "Game 5: 6 red, 1 blue, 3 green; 2 blue, 1 red, 2 green",
-];
+// EXAMPLE DATA
+// let lines = [
+//   "Game 1: 3 blue, 4 red; 1 red, 2 green, 6 blue; 2 green",
+//   "Game 2: 1 blue, 2 green; 3 green, 4 blue, 1 red; 1 green, 1 blue",
+//   "Game 3: 8 green, 6 blue, 20 red; 5 blue, 4 red, 13 green; 5 green, 1 red",
+//   "Game 4: 1 green, 3 red, 6 blue; 3 green, 6 red; 3 green, 15 blue, 14 red",
+//   "Game 5: 6 red, 1 blue, 3 green; 2 blue, 1 red, 2 green",
+// ];
 
 let gameNumSum = 0; // sum of all the valid game numbers
 
@@ -48,9 +49,8 @@ const bagValues = {
   blue: 14,
 };
 
-// Check each game
-// for (let line of input.split("/n")) {
-for (let line of lines) {
+for (let line of input.split("\n")) {
+  // for (let line of lines) { // UNCOMMENT OUT LNE FOR EXAMPLE DATA
   [gameNum, highestValues] = setHighestGameVals(line); // [ 1, { blue: 6, red: 4, green: 2 } ]
   const isInvalidGame = Object.keys(highestValues).some((color) => {
     return highestValues[color] > bagValues[color];
@@ -73,7 +73,8 @@ Will return an array with index 0 being the game number
 */
 function setHighestGameVals(line) {
   const [game, ...gameData] = line.split(/[:,;]/);
-  const gameNum = parseInt(game.slice(-1));
+  const gameNumMatch = game.match(/Game (\d+)/); // gets the digits
+  const gameNum = gameNumMatch ? parseInt(gameNumMatch[1]) : null;
 
   let highestValues = {};
 
