@@ -28,6 +28,44 @@ Of course, the actual engine schematic is much larger. What is the sum of all of
 const fs = require("fs");
 const input = fs
   .readFileSync("html-sandbox/advent-of-code-2023/day3/input.txt")
-  .toString();
+  .toString()
+  .split("\n");
 
-console.log(input);
+// console.log(input);
+
+const exampleInput = [
+  "467..114..",
+  "...*......",
+  "..35..633.",
+  "......#...",
+  "617*......",
+  ".....+.58.",
+  "..592.....",
+  "......755.",
+  "...$.*....",
+  ".664.598..",
+];
+
+/*
+Returns an array of coords for any symbols 
+[ [x,y], ... ]
+*/
+function findSymbolLocations(input) {
+  const symbols = "@$#%^&*+=-_";
+  let symbolLocations = [];
+
+  for (let rowIndex = 0; rowIndex < input.length; rowIndex++) {
+    let row = input[rowIndex];
+
+    for (let colIndex = 0; colIndex < row.length; colIndex++) {
+      let char = row[colIndex];
+      let rowVal = row.indexOf(rowIndex[colIndex]);
+      if (symbols.includes(char)) {
+        symbolLocations.push([rowIndex, colIndex]);
+      }
+    }
+  }
+  return symbolLocations;
+}
+
+console.log(findSymbolLocations(exampleInput));
