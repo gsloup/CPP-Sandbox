@@ -22,3 +22,25 @@ So, in this example, the Elf's pile of scratchcards is worth 13 points.
 
 Take a seat in the large pile of colorful cards. How many points are they worth in total?
 */
+
+const fs = require("fs");
+const input = fs
+  .readFileSync("html-sandbox/advent-of-code-2023/day4/input.txt")
+  .toString()
+  .split("\n");
+
+// console.log(input[0]);
+
+function processCardData(stringArray) {
+  for (let line of stringArray) {
+    let [card, winningNums, actualNums] = line.split(/[:|]/);
+
+    card.split(" ");
+    let cardNum = card.length - 1;
+    console.log("Card", cardNum);
+    // console.log("Winning Nums", winningNums);
+    // console.log("Actual Nums", actualNums);
+  }
+}
+
+processCardData(input);
